@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../../udemy-docker-mastery-main"
+		},
+		{
+			"path": "../udemy-docker-mastery"
 		}
 	],
 	"settings": {}

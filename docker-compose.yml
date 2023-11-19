@@ -1,0 +1,24 @@
+#frontend application and backend database
+version: '3.8'
+
+services:
+  ubuntu:
+    image: ubuntu:22.04  #this customer facing service
+    command: tail -f /dev/null #keeps container running no matter what.
+    networks:
+      - frontend
+
+  db:
+    image: postgres:12
+    environment:
+      POSTGRES_DB: golddatabase
+      POSTGRES_USER: golduser
+      POSTGRES_PASSWORD: gold
+    networks:
+      - backend #wont be seen by customers
+    ports:
+      - "5432:5432" #important to have a space after the dash or it won't run
+
+networks:
+  frontend:
+  backend:

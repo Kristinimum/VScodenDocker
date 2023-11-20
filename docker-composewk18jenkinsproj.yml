@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  jenkins:
+    image: jenkins/jenkins:lts-jdk17
+    ports:
+    - 8080:8080
+    volumes:
+      - keep_this_data:/var/jenkins_home
+volumes:
+  keep_this_data:
+    
+
